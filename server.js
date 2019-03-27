@@ -28,7 +28,7 @@ app.get("/api/whoami", function (req, res) {
   res.json({
     language: req.headers["accept-language"],
     software: req.headers["user-agent"],
-    ipAddress: req.socket.remoteAddress,
+    ipAddress: req.headers["x-forwarded-for"],
   });
 });
 
